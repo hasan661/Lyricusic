@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lyricusic',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(147, 58, 22, 1),
+        primarySwatch: Colors.red,
       ),
       // home: IntroductoryScreen(),
       routes: {

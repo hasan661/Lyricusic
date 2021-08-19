@@ -9,7 +9,7 @@ class LanguagesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(255, 219, 88, 1),
+      // backgroundColor: Color.fromRGBO(255, 219, 88, 1),
         appBar: AppBar(
           title: Container(
               width: double.infinity,
@@ -21,13 +21,9 @@ class LanguagesScreen extends StatelessWidget {
                 textAlign: TextAlign.justify,
               )),
         ),
-        body: GridView(
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 400,
-            childAspectRatio: 3/2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
-          ),
+        body: ListView(
+          
+          
           children: [...Data.map((e) => LanguageItem(e.title,e.Url,e.id)).toList(),]
         ));
   }
