@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      // home: IntroductoryScreen(),
       routes: {
         '/': (ctx)=>IntroductoryScreen(),
         IntroductoryScreen.routename:(ctx)=>LanguagesScreen(),
