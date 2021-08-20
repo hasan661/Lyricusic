@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 class MusicItem extends StatelessWidget {
+  final songname;
+  final singername;
+  final lyrics;
+  
+
+  MusicItem({required this.lyrics, required this.singername, required this.songname});
 
   @override
   Widget build(BuildContext context) {
@@ -8,7 +14,7 @@ class MusicItem extends StatelessWidget {
        
       },
       borderRadius: BorderRadius.circular(15),
-      child: ListTile(leading: IconButton(onPressed: (){}, icon: Icon(Icons.play_arrow)), title: Text("Dummy"), subtitle: Text("Dummy"),trailing: TextButton(onPressed: (){}, child: Text("Lyrics")),),
+      child: ListTile(leading: IconButton(onPressed: (){}, icon: Icon(Icons.play_arrow)), title: Text(songname), subtitle: Text(singername),trailing: TextButton(onPressed: (){}, child: Text("Lyrics")),),
     );
   }
 }

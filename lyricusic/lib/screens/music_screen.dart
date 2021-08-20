@@ -13,8 +13,9 @@ class MusicScreen extends StatefulWidget {
 class _MusicScreenState extends State<MusicScreen> {
   @override
   Widget build(BuildContext context) {
-    final id = ModalRoute.of(context)!.settings.arguments as String;
-
+    final map = ModalRoute.of(context)!.settings.arguments as Map;
+    final id=map["id"];
+    final title=map["name"];
      List displayedsongs = songs.where((element) {
       for (var i = 0; i < songs.length; i++) {
         if (element.singerid == id) {
@@ -29,7 +30,11 @@ class _MusicScreenState extends State<MusicScreen> {
       appBar: AppBar(
         title: Text("Music"),
       ),
-      body: MusicItem(),
+      body: ListView(children: [
+        ...displayedsongs.map((e) {
+          return MusicItem(songname: e.name, singername: title, lyrics: e.lyrics);
+        }).toList()
+      ],),
     );
   }
 }
