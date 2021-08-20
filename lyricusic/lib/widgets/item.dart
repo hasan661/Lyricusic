@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '/data.dart';
 
-class LanguageItem extends StatefulWidget {
+
+class Item extends StatefulWidget {
   static const routename = "/singer";
   final Url;
   final title;
@@ -9,15 +9,15 @@ class LanguageItem extends StatefulWidget {
   var belongingid;
   List whatever=[];
   
-  LanguageItem(this.title, this.Url, this.id);
-  LanguageItem.other(
+  Item(this.title, this.Url, this.id);
+  Item.singer(
       this.title, this.Url, this.id, this.belongingid);
 
   @override
-  _LanguageItemState createState() => _LanguageItemState();
+  _ItemState createState() => _ItemState();
 }
 
-class _LanguageItemState extends State<LanguageItem> {
+class _ItemState extends State<Item> {
  
 
   @override
@@ -25,7 +25,7 @@ class _LanguageItemState extends State<LanguageItem> {
     return InkWell(
       onTap: () {
         Navigator.of(context)
-            .pushNamed(LanguageItem.routename,arguments: widget.id);
+            .pushNamed(Item.routename,arguments: widget.id);
         // fun();
       },
       borderRadius: BorderRadius.circular(15),

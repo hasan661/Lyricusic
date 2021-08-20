@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '/data.dart';
-import '/widgets/languageitem.dart';
+import '../widgets/item.dart';
 class SingersScreen extends StatefulWidget {
   @override
   _SingersScreenState createState() => _SingersScreenState();
@@ -36,7 +36,7 @@ class _SingersScreenState extends State<SingersScreen> {
             
             ...displayedsingers.map((e) { 
             
-            return LanguageItem.other(e.name, e.Url, e.id, e.belongingid);}),
+            return Item.singer(e.name, e.Url, e.id, e.belongingid);}),
             ]
         ) ,);
     

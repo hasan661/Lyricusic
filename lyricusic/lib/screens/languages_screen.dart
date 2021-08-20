@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lyricusic/widgets/languageitem.dart';
+import 'package:lyricusic/widgets/item.dart';
 
 import '../data.dart';
 
@@ -24,7 +24,7 @@ class LanguagesScreen extends StatelessWidget {
         body: ListView(
           
           
-          children: [...Data.map((e) => LanguageItem(e.title,e.Url,e.id)).toList(),]
+          children: [...Data.map((e) => Item(e.title,e.Url,e.id)).toList(),]
         ));
   }
 }
