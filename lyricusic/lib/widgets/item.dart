@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lyricusic/screens/music_screen.dart';
 
 
 class Item extends StatefulWidget {
@@ -24,8 +25,10 @@ class _ItemState extends State<Item> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        widget.belongingid==null ?
         Navigator.of(context)
-            .pushNamed(Item.routename,arguments: widget.id);
+            .pushNamed(Item.routename,arguments: widget.id):
+        Navigator.of(context).pushNamed(MusicScreen.routename, arguments: widget.id);
         // fun();
       },
       borderRadius: BorderRadius.circular(15),

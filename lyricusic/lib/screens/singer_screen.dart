@@ -14,8 +14,6 @@ class _SingersScreenState extends State<SingersScreen> {
     final id = ModalRoute.of(context)!.settings.arguments as String;
 
     List displayedsingers = Singers.where((element) {
-      print("singers" + element.belongingid);
-      print("other" + id);
       for (var i = 0; i < Singers.length; i++) {
         if (element.belongingid == id) {
           return true;

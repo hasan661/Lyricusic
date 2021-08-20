@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lyricusic/screens/introductory_page_screen.dart';
 import 'package:lyricusic/screens/languages_screen.dart';
+import 'package:lyricusic/screens/music_screen.dart';
 import 'package:lyricusic/screens/singer_screen.dart';
 import 'package:lyricusic/widgets/item.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (ctx)=>IntroductoryScreen(),
         IntroductoryScreen.routename:(ctx)=>LanguagesScreen(),
-        Item.routename:(ctx)=>SingersScreen()
+        Item.routename:(ctx)=>SingersScreen(),
+        MusicScreen.routename:(ctx)=>MusicScreen()
       },
       
     );
