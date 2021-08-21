@@ -28,7 +28,7 @@ class _ItemState extends State<Item> {
         widget.belongingid==null ?
         Navigator.of(context)
             .pushNamed(Item.routename,arguments: widget.id):
-        Navigator.of(context).pushNamed(MusicScreen.routename, arguments: {'id':widget.id, "name":widget.title});
+        Navigator.of(context).pushNamed(MusicScreen.routename, arguments: {'id':widget.id, "name":widget.title, "Url":widget.Url});
         // fun();
       },
       borderRadius: BorderRadius.circular(15),

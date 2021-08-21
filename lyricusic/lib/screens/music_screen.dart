@@ -16,6 +16,7 @@ class _MusicScreenState extends State<MusicScreen> {
     final map = ModalRoute.of(context)!.settings.arguments as Map;
     final id=map["id"];
     final title=map["name"];
+    final url=map["Url"];
      List displayedsongs = songs.where((element) {
       for (var i = 0; i < songs.length; i++) {
         if (element.singerid == id) {
@@ -32,7 +33,7 @@ class _MusicScreenState extends State<MusicScreen> {
       ),
       body: ListView(children: [
         ...displayedsongs.map((e) {
-          return MusicItem(songname: e.name, singername: title, lyrics: e.lyrics);
+          return MusicItem(songname: e.name, singername: title, lyrics: e.lyrics,);
         }).toList()
       ],),
     );
