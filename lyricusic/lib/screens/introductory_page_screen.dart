@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
+
+
 class IntroductoryScreen extends StatelessWidget {
   static const routename = "/languages";
-  const IntroductoryScreen({Key? key}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: appbar,
+      appBar: AppBar(
+        title: Container(
+          alignment: Alignment.center,
+          child: Text("Lyricusic")),
+      ),
+     
       body: Center(
         child: Stack(
           alignment: Alignment(0, -0.7),
@@ -22,7 +29,13 @@ class IntroductoryScreen extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("Welcome To LYRICMUSIC", style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold, fontSize: 30),),
+                Text(
+                  "Welcome To LYRICMUSIC",
+                  style: TextStyle(
+                      color: Colors.indigo,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30),
+                ),
                 Padding(
                     padding: EdgeInsets.all(8.0),
                     child: ElevatedButton(
@@ -30,12 +43,8 @@ class IntroductoryScreen extends StatelessWidget {
                           Navigator.of(context).pushNamed(routename);
                         },
                         child: new Text("Continue"))),
-                        
               ],
             ),
-            
-            
-
           ],
         ),
       ),

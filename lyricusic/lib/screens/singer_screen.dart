@@ -11,11 +11,14 @@ class SingersScreen extends StatefulWidget {
 class _SingersScreenState extends State<SingersScreen> {
   @override
   Widget build(BuildContext context) {
-    final id = ModalRoute.of(context)!.settings.arguments as String;
+    final id = ModalRoute.of(context)!.settings.arguments as Map;
+
+    final ids=id["id"];
+  
 
     List displayedsingers = Singers.where((element) {
       for (var i = 0; i < Singers.length; i++) {
-        if (element.belongingid == id) {
+        if (element.belongingid == ids) {
           return true;
         }
         return false;

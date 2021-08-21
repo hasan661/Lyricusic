@@ -11,6 +11,21 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  // var isRock;
+  // var isRap;
+  // var isLove;
+
+  // void setfilter(var isrock, var islove, var israp)
+  // {
+  //   isRock=isrock;
+  //   isRap=israp;
+  //   isLove=islove;
+  //   print(isRock);
+  //   print(isRap);
+    
+  //   print(isLove);
+    
+  // }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

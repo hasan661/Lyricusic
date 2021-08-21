@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+
 import 'package:lyricusic/widgets/item.dart';
 
 import '../data.dart';
 
-class LanguagesScreen extends StatelessWidget {
+class LanguagesScreen extends StatefulWidget {
+ 
+  @override
+  _LanguagesScreenState createState() => _LanguagesScreenState();
+}
+
+class _LanguagesScreenState extends State<LanguagesScreen> {
   final List languages = ["English", "Hindi/Urdu", "Spanish"];
 
   @override
@@ -21,8 +28,10 @@ class LanguagesScreen extends StatelessWidget {
                 textAlign: TextAlign.justify,
               )),
         ),
+        
         body: ListView(children: [
           ...Data.map((e) => Item(e.title, e.Url, e.id)).toList(),
-        ]));
+        ])
+        );
   }
 }
