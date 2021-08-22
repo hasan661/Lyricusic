@@ -10,7 +10,11 @@ class LyricsScreen extends StatelessWidget {
     );
     final lyrics = ModalRoute.of(context)!.settings.arguments as List;
     Widget list(var i) {
-      return Text("${lyrics[i]}",style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),);
+      return Text("${lyrics[i]}",style: 
+                  (MediaQuery.of(context).size.width<330)?
+                  Theme.of(context).textTheme.headline4:
+                  Theme.of(context).textTheme.headline3,
+                );
     }
 
     return Scaffold(
