@@ -28,11 +28,14 @@ class IntroductoryScreen extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  "Welcome To LYRICMUSIC",
-                  style: (MediaQuery.of(context).size.width < 330)
-                      ? Theme.of(context).textTheme.headline2
-                      : Theme.of(context).textTheme.headline1,
+                Card(
+                  elevation: 20,
+                  child: Text(
+                    "Welcome To LYRICMUSIC",
+                    style: (MediaQuery.of(context).size.width < 330)
+                        ? Theme.of(context).textTheme.headline2
+                        : Theme.of(context).textTheme.headline1,
+                  ),
                 ),
                 Padding(
                     padding: EdgeInsets.all(8.0),

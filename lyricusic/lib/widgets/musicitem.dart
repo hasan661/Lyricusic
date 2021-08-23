@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lyricusic/screens/lyricsscreen.dart';
 
+
 class MusicItem extends StatelessWidget {
   final songname;
   final singername;

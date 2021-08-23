@@ -41,7 +41,7 @@ class _ItemState extends State<Item> {
       },
       borderRadius: BorderRadius.circular(15),
       child: Stack(
-        alignment: Alignment(0, 0),
+        alignment: Alignment(0,0),
         children: [
           Container(
             width: double.infinity,

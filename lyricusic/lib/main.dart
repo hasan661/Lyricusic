@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
                   fontSize: 18,
                   fontFamily: 'RobotoCondensed',
                   fontWeight: FontWeight.bold,
+                  
                   color: Colors.indigo),
             ),
       ),
