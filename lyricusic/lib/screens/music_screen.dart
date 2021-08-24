@@ -7,6 +7,9 @@ import 'package:lyricusic/widgets/musicitem.dart';
 class MusicScreen extends StatefulWidget {
   static const routename = "/musicscreen";
 
+  final filters;
+  MusicScreen(this.filters);
+
 
 
   @override
@@ -23,7 +26,9 @@ class _MusicScreenState extends State<MusicScreen> {
   
     
     List displayedsongs = songs.where((element) {
+      print(widget.filters);
       for (var i = 0; i < songs.length; i++) {
+
         if (element.singerid == id) {
           // print(widget.isLove);
           return true;
@@ -31,8 +36,28 @@ class _MusicScreenState extends State<MusicScreen> {
         }
         return false;
       }
+      
 
       return false;
+    }).toList();
+
+    List filterdisplay=displayedsongs.where((element) {
+      if(widget.filters["IsRock"]==false)
+      {
+        return element.isRock==false;
+      }
+      if(widget.filters["IsRap"]==false)
+      {
+        return element.isRap==false;
+      }
+      if(widget.filters["IsLoveSong"]==false)
+      {
+        return element.isLoveSong==false;
+      }
+      
+      return true;
+      
+      
     }).toList();
     
 
@@ -42,7 +67,7 @@ class _MusicScreenState extends State<MusicScreen> {
       ),
       body: ListView(
         children: [
-          ...displayedsongs.map((e) {
+          ...filterdisplay.map((e) {
             return MusicItem(
               songname: e.name,
               singername: title,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lyricusic/screens/filters.dart';
 import 'package:lyricusic/screens/introductory_page_screen.dart';
 import 'package:lyricusic/screens/languages_screen.dart';
 import 'package:lyricusic/screens/lyricsscreen.dart';
@@ -11,6 +12,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  Map filters = {
+    "IsRock": true,
+    "IsLoveSong": true,
+    "IsRap": true,
+  };
+  
+  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,7 +49,6 @@ class MyApp extends StatelessWidget {
                   fontSize: 18,
                   fontFamily: 'RobotoCondensed',
                   fontWeight: FontWeight.bold,
-                  
                   color: Colors.indigo),
             ),
       ),
@@ -48,8 +56,9 @@ class MyApp extends StatelessWidget {
         '/': (ctx) => IntroductoryScreen(),
         IntroductoryScreen.routename: (ctx) => LanguagesScreen(),
         Item.routename: (ctx) => SingersScreen(),
-        MusicScreen.routename: (ctx) => MusicScreen(),
-        LyricsScreen.routename: (ctx) => LyricsScreen()
+        MusicScreen.routename: (ctx) => MusicScreen(filters),
+        LyricsScreen.routename: (ctx) => LyricsScreen(),
+        FilterScreen.routename: (ctx) => FilterScreen(filters)
       },
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lyricusic/screens/filters.dart';
 
 class IntroductoryScreen extends StatelessWidget {
   static const routename = "/languages";
@@ -23,12 +24,12 @@ class IntroductoryScreen extends StatelessWidget {
                   MediaQuery.of(context).padding.left,
               // height: (MediaQuery.of(context).size.height),
               fit: BoxFit.cover,
-              
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Card(
+                  // color: Colors.yellow,
                   elevation: 20,
                   child: Text(
                     "Welcome To LYRICMUSIC",
@@ -37,14 +38,34 @@ class IntroductoryScreen extends StatelessWidget {
                         : Theme.of(context).textTheme.headline1,
                   ),
                 ),
-                Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ElevatedButton(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).pushNamed(routename);
                           // Test();
                         },
-                        child: new Text("Continue"))),
+                        child: new Text("Continue"),
+                      ),
+                    
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: ElevatedButton(
+                        // style: ButtonStyle(MaterialSya),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(FilterScreen.routename);
+                          
+                        },
+                        child: new Text("Set Filters"),
+                      ),
+                    
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
